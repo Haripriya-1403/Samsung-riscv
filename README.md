@@ -67,7 +67,8 @@
 ### 32-bit Instruction Encoding:
 
 - **Binary Representation:**101010110000 | 01010| 0110111
-lw a3, 12(sp)
+##  LW Instruction
+### Instruction:lw a3, 12(sp)
 
 -**Type:** I-Type (Immediate)
 
@@ -84,6 +85,7 @@ lw a3, 12(sp)
 ### 32-bit Instruction Encoding:
 Binary Representation: 
 0000011 11101 01011 010 00000 000000001100
+## AUIPC instruction
 ### Instruction:auipc a5, 0xffff0
 
 **Type:** U-Type (Upper Immediate)
@@ -114,6 +116,7 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 0000000000010011 11100 0110111
+## LW Instruction
 ### Instruction:lw a5, 1944(gp)
 
 **Type:** I-Type (Immediate)
@@ -160,3 +163,20 @@ Instruction: addi a5, a5, -176
 32-bit Instruction Encoding:
  * Binary Representation:
    0010011 000 15 15 10101000
+SLLI Instruction
+Instruction: slli a3, a3, 0x20
+> This instruction performs a logical left shift on the value in register a3 and stores the result in register a3.
+> 
+ * Type: R-Type (Register)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for SLLI: 0000000
+   * funct3: 001 (for slli)
+   * rd (a3): 9 (Register number for a3)
+   * rs1 (a3): 9 (Register number for a3)
+   * rs2: 0 (Not used in SLLI)
+   * funct7: 0000000 (for slli)
+   * shamt: 0x20 (Shift amount)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0000000 9 000 9 0000000 0x20
