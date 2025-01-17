@@ -85,38 +85,37 @@
 ### 32-bit Instruction Encoding:
 Binary Representation: 
 0000011 11101 01011 010 00000 000000001100
-## AUIPC instruction
-### Instruction:auipc a5, 0xffff0
-
-**Type:** U-Type (Upper Immediate)
-
-**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for AUIPC:** 0010111
-**rd (a5):** 15 (Register number for a5 in RISC-V)
-**imm:** 0xffff0 (Immediate value, which is a 20-bit unsigned integer)
-
-### 32-bit Instruction Encoding:
-Binary Representation:
-0010111 00000 01111 1111111111110000
-### AUIPC Instruction 
-### Instruction:auipc gp, 0x13
-
-**Type:** U-Type (Upper Immediate)
-
-**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for AUIPC:** 0110111
-**rd (gp):** 28 (Register number for GP, which corresponds to x28)
-**imm:** 0x13 (The 20-bit immediate value to be added to the PC)
-
+## ADDIW Instruction
+## Instruction: addiw a5, a5, -1
+> This instruction adds the immediate value (-1) to the 32-bit value in register a5 and stores the 32-bit result in register a5.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for ADDIW: 0011011
+   * funct3: 000 (for addiw)
+   * rd (a5): 15 (Register number for a5)
+   * rs1 (a5): 15 (Register number for a5)
+   * imm: -1 (Immediate value, which is a 12-bit signed integer)
 32-bit Instruction Encoding:
-### Binary Representation:
-0000000000010011 11100 0110111
+ * Binary Representation:
+   0011011 000 15 15 1111111111111111
+## JR Instruction
+## Instruction: jr zero
+> This instruction unconditionally jumps to the address stored in register zero.
+> 
+ * Type: R-Type (Register)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for JR: 0000000
+   * rs1 (zero): 0 (Register number for zero)
+   * rs2: 0 (Not used)
+   * rd: 0 (Not used)
+   * funct3: 000 (Not used)
+   * funct7: 0010000 (for jr)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0000000 00000 00000 00000 0010000
 ## LW Instruction
 ### Instruction:lw a5, 1944(gp)
 
