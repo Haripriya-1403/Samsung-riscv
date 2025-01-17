@@ -67,24 +67,19 @@
 ### 32-bit Instruction Encoding:
 
 - **Binary Representation:**101010110000 | 01010| 0110111
-##  LW Instruction
-### Instruction:lw a3, 12(sp)
-
--**Type:** I-Type (Immediate)
-
--**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for LW:** 0000011 (binary for opcode 0x23)
-**funct3:** 010 (for lw)
-**rd (a3):** 11 (Register number for $a3)
-**rs1 (sp):** 29 (Register number for $sp)
-**imm:** 12 (Immediate offset, a 12-bit signed integer)
-
-### 32-bit Instruction Encoding:
-Binary Representation: 
-0000011 11101 01011 010 00000 000000001100
+## AUIPC Instruction
+## Instruction: auipc gp, 0x13
+> This instruction belongs to the U-type instruction set as it involves an immediate value for upper-immediate loading.
+> 
+ * Type: U-Type (Upper Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for AUIPC: 0110111
+   * rd (gp): 3 (Register number for gp)
+   * imm: 0x13 (20-bit immediate value)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   * 0110111 00000000 00000000 00000000 00010011
 ## ADDIW Instruction
 ## Instruction: addiw a5, a5, -1
 > This instruction adds the immediate value (-1) to the 32-bit value in register a5 and stores the 32-bit result in register a5.
