@@ -29,6 +29,61 @@
 ### 32-bit Instruction Encoding:
 
 - **Binary Representation:**1110 1000 0000 01111 000 01111 0010011
+- 
+---
+
+## JAL Instruction
+
+### Instruction: `jal ra, 10264`
+
+> The `jal` (Jump and Link) instruction is used for control flow and belongs to the *J-type* instruction set.
+
+- **Type:** J-Type (Jump)
+- **Label:** None (it's a direct instruction without a label)
+
+- **Details:**
+- **Opcode for JAL:** 1101111
+- **rd (ra):** 1 (Register number for ra)
+- **imm:** 10264 (Immediate value, which is a 20-bit signed integer)
+
+### 32-bit Instruction Encoding:
+
+- **Binary Representation:**00000110010100000000 | 00001| 1101111
+## LUI Instruction
+
+### Instruction: `lui a0, 0×2b`
+
+> The `lui` (Load Upper Immediate) instruction is used to load a 20-bit immediate value into the upper 20 bits of a register and belongs to the *U-type* instruction set.
+
+- **Type:** U-Type (Upper Immediate)
+- **Label:** None (it's a direct instruction without a label)
+
+- **Details:**
+  - **Opcode for LUI:** 0110111
+  - **funct3:** 000 (for lui)
+  - **rd (a0):** 10 (Register number for a0)
+  - **imm:** 0x2b000 (Immediate value, shifted left by 12 bits to occupy the upper 20 bits)
+
+### 32-bit Instruction Encoding:
+
+- **Binary Representation:**101010110000 | 01010| 0110111
+lw a3, 12(sp)
+
+-**Type:** I-Type (Immediate)
+
+-**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for LW:** 0000011 (binary for opcode 0x23)
+**funct3:** 010 (for lw)
+**rd (a3):** 11 (Register number for $a3)
+**rs1 (sp):** 29 (Register number for $sp)
+**imm:** 12 (Immediate offset, a 12-bit signed integer)
+
+### 32-bit Instruction Encoding:
+Binary Representation: 
+0000011 11101 01011 010 00000 000000001100
 
 
 
