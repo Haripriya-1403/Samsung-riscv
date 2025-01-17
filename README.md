@@ -127,22 +127,22 @@
 32-bit Instruction Encoding:
  * Binary Representation:
    1100111 00000 000 00101 00000 000000000000
-## AUIPC Instruction
-### Instruction:auipc a0, 0x0
-
-**Type:** U-Type (Upper Immediate)
-
-**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for AUIPC:** 0111011
-**rd (a0):** 10 (Register number for a0)
-**imm:** 0x0 (Immediate value, which is a 20-bit unsigned integer)
-
+## BGEU Instruction
+## Instruction: bgeu t1, a2, 10334
+> This instruction belongs to the B-type instruction set as it's a branch instruction with an immediate offset.
+> 
+ * Type: B-Type (Branch)
+ * Label: 10334 (This is the target address of the branch)
+ * Breakpoint: Can be set at this instruction to pause program execution before the branch condition is evaluated.
+ * Details:
+   * Opcode for BGEU: 1100011
+   * funct3: 111 (for bgeu)
+   * rs1 (t1): 5 (Register number for t1)
+   * rs2 (a2): 1 (Register number for a2)
+   * imm: 10334 (13-bit signed immediate value representing the branch offset)
 32-bit Instruction Encoding:
-### Binary Representation:
-00000000000000000000 01010 0111011
+ * Binary Representation:
+   * 1100011 00101000 00000001 111
 ##ADDI Instruction
 ### Instruction: addi a5, a5, -176
 > All the arithmetic and logical operations are performed using I-type instruction format, hence this instruction belongs to the I-type instruction set.
