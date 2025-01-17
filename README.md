@@ -84,6 +84,79 @@ lw a3, 12(sp)
 ### 32-bit Instruction Encoding:
 Binary Representation: 
 0000011 11101 01011 010 00000 000000001100
+### Instruction:auipc a5, 0xffff0
 
+**Type:** U-Type (Upper Immediate)
 
+**Label:** None (it's a direct instruction without a label)
 
+**Details:**
+
+**Opcode for AUIPC:** 0010111
+**rd (a5):** 15 (Register number for a5 in RISC-V)
+**imm:** 0xffff0 (Immediate value, which is a 20-bit unsigned integer)
+
+### 32-bit Instruction Encoding:
+Binary Representation:
+0010111 00000 01111 1111111111110000
+### Instruction:auipc gp, 0x13
+
+**Type:** U-Type (Upper Immediate)
+
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for AUIPC:** 0110111
+**rd (gp):** 28 (Register number for GP, which corresponds to x28)
+**imm:** 0x13 (The 20-bit immediate value to be added to the PC)
+
+32-bit Instruction Encoding:
+### Binary Representation:
+0000000000010011 11100 0110111
+### Instruction:lw a5, 1944(gp)
+
+**Type:** I-Type (Immediate)
+
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for LW:** 0000011
+**funct3:** 010 (for lw operation)
+**rd (a5):** 15 (Register number for a5)
+**rs1 (gp):** 28 (Register number for gp)
+**imm:** 1944 (Immediate value, which is a 12-bit signed integer)
+32-bit Instruction Encoding:
+### Binary Representation:
+0000011111001000 11100  010  01101 0000011
+### Instruction:auipc a0, 0x0
+
+**Type:** U-Type (Upper Immediate)
+
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for AUIPC:** 0111011
+**rd (a0):** 10 (Register number for a0)
+**imm:** 0x0 (Immediate value, which is a 20-bit unsigned integer)
+
+32-bit Instruction Encoding:
+### Binary Representation:
+00000000000000000000 01010 0111011
+ADDI Instruction
+Instruction: addi a5, a5, -176
+> All the arithmetic and logical operations are performed using I-type instruction format, hence this instruction belongs to the I-type instruction set.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for ADDI: 0010011
+   * funct3: 000 (for addi)
+   * rd (a5): 15 (Register number for a5)
+   * rs1 (a5): 15 (Register number for a5)
+   * imm: -176 (Immediate value, which is a 12-bit signed integer)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0010011 000 15 15 10101000
