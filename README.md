@@ -101,6 +101,7 @@ Binary Representation:
 ### 32-bit Instruction Encoding:
 Binary Representation:
 0010111 00000 01111 1111111111110000
+### AUIPC Instruction 
 ### Instruction:auipc gp, 0x13
 
 **Type:** U-Type (Upper Immediate)
@@ -133,6 +134,7 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 0000011111001000 11100  010  01101 0000011
+## AUIPC Instruction
 ### Instruction:auipc a0, 0x0
 
 **Type:** U-Type (Upper Immediate)
@@ -148,8 +150,8 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 00000000000000000000 01010 0111011
-ADDI Instruction
-Instruction: addi a5, a5, -176
+##ADDI Instruction
+### Instruction: addi a5, a5, -176
 > All the arithmetic and logical operations are performed using I-type instruction format, hence this instruction belongs to the I-type instruction set.
 > 
  * Type: I-Type (Immediate)
@@ -163,8 +165,8 @@ Instruction: addi a5, a5, -176
 32-bit Instruction Encoding:
  * Binary Representation:
    0010011 000 15 15 10101000
-SLLI Instruction
-Instruction: slli a3, a3, 0x20
+## SLLI Instruction
+### Instruction: slli a3, a3, 0x20
 > This instruction performs a logical left shift on the value in register a3 and stores the result in register a3.
 > 
  * Type: R-Type (Register)
@@ -180,3 +182,94 @@ Instruction: slli a3, a3, 0x20
 32-bit Instruction Encoding:
  * Binary Representation:
    0000000 9 000 9 0000000 0x20
+  ## SB Instruction
+### Instruction: sb a1, 14(a4)
+> This instruction stores the byte from register a1 to the memory address calculated by adding the immediate value (14) to the value in register a4.
+> 
+ * Type: S-Type (Store)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for SB: 0100011
+   * funct3: 000 (for sb)
+   * rs1 (a4): 10 (Register number for a4)
+   * rs2 (a1): 5 (Register number for a1)
+   * imm[11:5]: 0000111 (Upper 7 bits of the immediate value, 14)
+   * imm[4:0]: 00110 (Lower 5 bits of the immediate value, 14)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0100011 000 10 5 0000111 00110
+  ### ADD Instruction
+### Instruction: add a3, a3, t0
+> This instruction adds the values in registers a3 and t0 and stores the result in register a3.
+> 
+ * Type: R-Type (Register)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for ADD: 0000000
+   * funct3: 000 (for add)
+   * rd (a3): 9 (Register number for a3)
+   * rs1 (a3): 9 (Register number for a3)
+   * rs2 (t0): 5 (Register number for t0)
+   * funct7: 0000000 (for add)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0000000 9 000 9 5 0000000
+### SUB Instruction
+### Instruction: sub a3, t1, a2
+> This instruction subtracts the value in register a2 from the value in register t1 and stores the result in register a3.
+> 
+ * Type: R-Type (Register)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for SUB: 0000000
+   * funct3: 000 (for sub)
+   * rd (a3): 9 (Register number for a3)
+   * rs1 (t1): 5 (Register number for t1)
+   * rs2 (a2): 6 (Register number for a2)
+   * funct7: 0100000 (for sub)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0000000 9 000 5 6 0100000
+##   BNEZ Instruction
+## Instruction: bnez a1, 10388
+> This instruction branches to the specified offset (10388) if the value in register a1 is not equal to zero.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for BNEZ: 0000011
+   * rs1 (a1): 5 (Register number for a1)
+   * imm: 10388 (Immediate value, which is a 12-bit signed integer)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0000011 000 5 0000000 0011111111111111
+   ## BLTU Instruction
+## Instruction: bltu a4, a3, 1031c
+> This instruction branches to the specified offset (1031c) if the unsigned value in register a4 is less than the unsigned value in register a3.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for BLTU: 0001011
+   * rs1 (a4): 10 (Register number for a4)
+   * rs2 (a3): 9 (Register number for a3)
+   * imm: 1031c (Immediate value, which is a 12-bit signed integer)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0001011 000 10 9 1111111111111111
+  ## MV Instruction
+## Instruction: mv a4, a0
+> This instruction moves the value from register a0 to register a4. It's essentially a simplified form of the add instruction where the second source register is the same as the destination register.
+> 
+ * Type: R-Type (Register)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for ADD: 0000000
+   * funct3: 000 (for add)
+   * rd (a4): 10 (Register number for a4)
+   * rs1 (a0): 0 (Register number for a0)
+   * rs2 (a0): 0 (Register number for a0)
+   * funct7: 0000000 (for add)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0000000 10 000 0 0 0000000
