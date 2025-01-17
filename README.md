@@ -116,23 +116,22 @@ Binary Representation:
 32-bit Instruction Encoding:
  * Binary Representation:
    0000000 00000 00000 00000 0010000
-## LW Instruction
-### Instruction:lw a5, 1944(gp)
-
-**Type:** I-Type (Immediate)
-
-**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for LW:** 0000011
-**funct3:** 010 (for lw operation)
-**rd (a5):** 15 (Register number for a5)
-**rs1 (gp):** 28 (Register number for gp)
-**imm:** 1944 (Immediate value, which is a 12-bit signed integer)
+## JALR Instruction
+## instruction: jalr a5 
+> The jalr instruction belongs to the I-type instruction set in RISC-V architecture.
+> 
+ * Type: I-Type (Immediate)
+ * Label: (Optional - can be assigned as needed)
+ * Details:
+   * Opcode: 1100111
+   * rd: 00000 (No destination register specified)
+   * funct3: 000
+   * rs1 (a5): 00101 (Register number for a5)
+   * rs2: 00000 (No second source register)
+   * imm[11:0]: 000000000000 (Immediate field is not used)
 32-bit Instruction Encoding:
-### Binary Representation:
-0000011111001000 11100  010  01101 0000011
+ * Binary Representation:
+   1100111 00000 000 00101 00000 000000000000
 ## AUIPC Instruction
 ### Instruction:auipc a0, 0x0
 
