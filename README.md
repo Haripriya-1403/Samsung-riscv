@@ -270,7 +270,12 @@
    ###Instructions
    
 
-   | Address  | Instruction        | Machine Code  | Assembly Code           |
+ ## MIPS Assembly Instructions Table
+
+This table represents MIPS assembly instructions along with their corresponding machine code and memory addresses.
+
+```mark
+| Address  | Instruction        | Machine Code  | Assembly Code           |
 |----------|--------------------|--------------|-------------------------|
 | MEM[0]   | `add r6, r2, r3`   | 0x02308300   | `add r6, r2, r3`        |
 | MEM[1]   | `sub r7, r2, r4`   | 0x02409380   | `sub r7, r2, r4`        |
@@ -283,6 +288,8 @@
 | MEM[8]   | `lw r13, r1, 3`    | 0x00308681   | `lw r13, r1, 3`         |
 | MEM[9]   | `beq r0, r0, 14`   | 0x00e00002   | `beq r0, r0, 14`        |
 | MEM[20]  | `add r14, r3, r3`  | 0x00410700   | `add r14, r3, r3`       |
+```
+
 
 ![Screenshot 2025-02-10 125334](https://github.com/user-attachments/assets/4331635e-ed76-4c48-8844-ce609ca40406)
 ![Screenshot 2025-02-10 125430](https://github.com/user-attachments/assets/565e608f-5fcb-40fa-a4c5-1c0ec58e1bde)
