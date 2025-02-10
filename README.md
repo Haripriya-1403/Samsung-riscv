@@ -260,9 +260,14 @@
    * Opcode for ADD: 0000000
    * funct3: 000 (for add)
    * rd (a4): 10 (Register number for a4)
-   * rs1 (a0): 0 (Register number for a0)
+ * rs1 (a0): 0 (Register number for a0)
    * rs2 (a0): 0 (Register number for a0)
    * funct7: 0000000 (for add)
 32-bit Instruction Encoding:
  * Binary Representation:
-   0000000 10 000 0 0 0000000
+ * 0000000 10 000 0 0 0000000
+![Screenshot 2025-02-10 125334](https://github.com/user-attachments/assets/4331635e-ed76-4c48-8844-ce609ca40406)
+![Screenshot 2025-02-10 125430](https://github.com/user-attachments/assets/565e608f-5fcb-40fa-a4c5-1c0ec58e1bde)
+![Screenshot 2025-02-10 125515](https://github.com/user-attachments/assets/766e6308-9a9e-4052-ab44-efc7e2a4a6ff)
+
+
