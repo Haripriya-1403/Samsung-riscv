@@ -1,4 +1,4 @@
-module iiitb_rv32i(clk, RN, NPC, WB_OUT);
+module riscv_rv32i(clk, RN, NPC, WB_OUT);
 input clk;
 input RN;
 integer k;
@@ -40,12 +40,12 @@ always @(posedge clk or posedge RN) begin
         NPC <= 32'd0;
         BR_EN <= 1'd0;
         REG[0] <= 32'h00000000;
-        REG[1] <= 32'd10;
-        REG[2] <= 32'd20;
-        REG[3] <= 32'd30;
-        REG[4] <= 32'd40;
-        REG[5] <= 32'd50;
-        REG[6] <= 32'd60;
+        REG[1] <= 32'd15;
+        REG[2] <= 32'd25;
+        REG[3] <= 32'd35;
+        REG[4] <= 32'd45;
+        REG[5] <= 32'd55;
+        REG[6] <= 32'd65;
     end else begin
         NPC <= BR_EN ? EX_MEM_ALUOUT : NPC + 32'd1;
         BR_EN <= 1'd0;
