@@ -266,6 +266,22 @@
 32-bit Instruction Encoding:
  * Binary Representation:
  * 0000000 10 000 0 0 0000000
+   ### task 4
+   ###Instructions
+   | Address  | Instruction        | Machine Code  | Assembly Code           |
+|----------|--------------------|--------------|-------------------------|
+| MEM[0]   | `add r6, r2, r3`   | 0x02308300   | `add r6, r2, r3`        |
+| MEM[1]   | `sub r7, r2, r4`   | 0x02409380   | `sub r7, r2, r4`        |
+| MEM[2]   | `and r8, r3, r5`   | 0x0260a400   | `and r8, r3, r5`        |
+| MEM[3]   | `or r9, r4, r6`    | 0x02713480   | `or r9, r4, r6`         |
+| MEM[4]   | `xor r10, r5, r6`  | 0x0280c500   | `xor r10, r5, r6`       |
+| MEM[5]   | `slt r11, r6, r7`  | 0x02915580   | `slt r11, r6, r7`       |
+| MEM[6]   | `addi r12, r5, 6`  | 0x00620600   | `addi r12, r5, 6`       |
+| MEM[7]   | `sw r3, r1, 3`     | 0x00309181   | `sw r3, r1, 3`          |
+| MEM[8]   | `lw r13, r1, 3`    | 0x00308681   | `lw r13, r1, 3`         |
+| MEM[9]   | `beq r0, r0, 14`   | 0x00e00002   | `beq r0, r0, 14`        |
+| MEM[20]  | `add r14, r3, r3`  | 0x00410700   | `add r14, r3, r3`       |
+
 ![Screenshot 2025-02-10 125334](https://github.com/user-attachments/assets/4331635e-ed76-4c48-8844-ce609ca40406)
 ![Screenshot 2025-02-10 125430](https://github.com/user-attachments/assets/565e608f-5fcb-40fa-a4c5-1c0ec58e1bde)
 ![Screenshot 2025-02-10 125515](https://github.com/user-attachments/assets/766e6308-9a9e-4052-ab44-efc7e2a4a6ff)
